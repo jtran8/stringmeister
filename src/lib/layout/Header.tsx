@@ -10,6 +10,7 @@ const Header = () => {
   const racquets = useColorModeValue(racquetsLight, racquetsDark);
   return (
     <VStack
+      spacing={4}
       width="full"
       align="center"
       alignSelf="flex-start"
