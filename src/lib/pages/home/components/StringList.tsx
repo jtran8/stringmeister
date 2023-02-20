@@ -1,11 +1,18 @@
 import { SimpleGrid } from "@chakra-ui/react";
 
+import babolat from "../../../../assets/img/babolat.jpg";
+import gamma from "../../../../assets/img/gamma.jpg";
+import head from "../../../../assets/img/head.jpg";
+import technifibre from "../../../../assets/img/technifibre.jpg";
+import volkl from "../../../../assets/img/volkl.jpg";
+import yonex from "../../../../assets/img/yonex.jpg";
+
 import StringCard from "./StringCard";
 
 const strings = [
   {
     brand: "Technifibre",
-    logo: "https://yt3.googleusercontent.com/6-zj0A3H4xl2vrO9bRp-jo7aDkH_JcqWcpnHqHZeGlETbpMUVqhvwhyiZTvf3Jt2dxFUS6Scsg=s900-c-k-c0x00ffffff-no-rj",
+    logo: technifibre,
     sku: "Black Code 17/1.24",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/991/23137/tecnifibre-blackcode-17-1-24mm-200m-reel-black__06147.1581418043.jpg?c=2",
     price: 25,
@@ -16,7 +23,7 @@ const strings = [
   },
   {
     brand: "Yonex",
-    logo: "https://pbs.twimg.com/media/DIEKHoWW0AAvEse.jpg:large",
+    logo: yonex,
     sku: "Poly Tour Pro 17/1.20",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/4216/23973/yonex-poly-tour-pro-17-1-20mm-200m-reel-yellow__76371.1610757166.jpg?c=2",
     price: 25,
@@ -27,7 +34,7 @@ const strings = [
   },
   {
     brand: "Volkl",
-    logo: "http://cdn.shopify.com/s/files/1/0574/9148/8937/collections/volkl_logo_1200x1200.png?v=1631304040",
+    logo: volkl,
     sku: "Cyclone 17/1.25",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/2837/23868/volkl-cyclone-16-1-30mm-200m-reel-black__10970.1605384854.jpg?c=2",
     price: 20,
@@ -38,7 +45,7 @@ const strings = [
   },
   {
     brand: "Gamma",
-    logo: "https://www.gamma-tennis.it/pimages/225_sitelogo_0703050959ABbo69.png",
+    logo: gamma,
     sku: "Moto 17/1.24",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/4816/23653/gamma-moto-17-1-24mm-200m-reel__04140.1594235979.jpg?c=2",
     price: 20,
@@ -49,7 +56,7 @@ const strings = [
   },
   {
     brand: "Head",
-    logo: "https://costabravapadeltour.com/wp-content/uploads/2022/06/logo_head.png",
+    logo: head,
     sku: "Velocity MLT 16/1.30",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/3442/23089/head-velocity-mlt-16-1-30mm-200m-reel-black__89606.1581084327.jpg?c=2",
     price: 20,
@@ -60,7 +67,7 @@ const strings = [
   },
   {
     brand: "Babolat",
-    logo: "https://racquetnetwork.com/wp-content/uploads/BABOLAT-LOGO.jpg",
+    logo: babolat,
     sku: "Synthetic Gut 17/1.25",
     pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/2868/23925/babolat-synthetic-gut-17-1-25mm-200m-reel-natural__98198.1607105777.jpg?c=2",
     price: 15,

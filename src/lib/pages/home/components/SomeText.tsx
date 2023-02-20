@@ -8,7 +8,7 @@ interface SomeTextProps {
 const SomeText = ({ heading, body }: SomeTextProps) => {
   return (
     <Grid textAlign="center" gap={2}>
-      <Heading fontSize="xl" fontWeight="bold">
+      <Heading fontSize="xl" fontWeight="md">
         {heading}
       </Heading>
       <Text fontSize="sm">{body}</Text>

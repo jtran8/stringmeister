@@ -9,10 +9,17 @@ const Home = () => {
     <Grid gap={4}>
       <SomeText
         heading="West Toronto Stringing Services"
-        body="Our Offerings (prices include string & Labour)"
+        body="Our Offerings (prices include string & labour)"
       />
       <StringList />
       <SomeText heading="" body="More strings coming soon!" />
+      <SomeText
+        heading="Other Services"
+        body="Wilson Pro Overgrip (White) - $5"
+      />
+      <Text fontSize="sm" textAlign="center" mt="-12px">
+        Yonex Supergrap Overgrip (Black) - $5
+      </Text>
       <Text fontSize="sm" textAlign="center" mt="20px" mb="-3">
         Convenient Drop-Off & Pickup
       </Text>

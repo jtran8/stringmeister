@@ -6,10 +6,15 @@ import {
   Image,
   Heading,
   Text,
-  Show,
+  Collapse,
   Flex,
   Spacer,
+  Button,
+  useDisclosure,
+  Center,
 } from "@chakra-ui/react";
+
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
 import SpecsTable from "./SpecsTable";
 
@@ -35,27 +40,36 @@ const StringCard = ({
   type,
   shape,
   colour,
-}: StringProps) => (
-  <Card maxW="sm">
-    <CardBody>
-      <Flex gap={4} mb="20px">
-        <Avatar name={brand} src={logo} />
-        <Box>
-          <Heading size="sm">{brand}</Heading>
-          <Text>{sku}</Text>
-        </Box>
-        <Spacer />
-        <Heading size="lg">${price}</Heading>
-      </Flex>
-      <Show above="sm">
-        <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
-      </Show>
-      <Text fontSize="sm" mb="20px">
-        {desc}
-      </Text>
-      <SpecsTable type={type} shape={shape} colour={colour} />
-    </CardBody>
-  </Card>
-);
+}: StringProps) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Card maxW="sm">
+      <CardBody>
+        <Flex gap={4} mb="20px">
+          <Avatar name={brand} src={logo} />
+          <Box>
+            <Heading size="sm">{brand}</Heading>
+            <Text>{sku}</Text>
+          </Box>
+          <Spacer />
+          <Heading size="lg">${price}</Heading>
+        </Flex>
+        <Collapse in={isOpen} unmountOnExit>
+          <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
+          <Text fontSize="sm" mb="20px">
+            {desc}
+          </Text>
+          <SpecsTable type={type} shape={shape} colour={colour} />
+        </Collapse>
+        <Center>
+          <Button variant="unstyled" onClick={onToggle}>
+            {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          </Button>
+        </Center>
+      </CardBody>
+    </Card>
+  );
+};
 
 export default StringCard;

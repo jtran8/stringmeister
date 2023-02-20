@@ -9,7 +9,9 @@ const Header = () => {
       alignSelf="flex-start"
       justifyContent="center"
     >
-      <Text fontSize="lg">String Meister</Text>
+      <Text fontSize="2xl" fontWeight="bold">
+        String Meister
+      </Text>
     </Flex>
   );
 };
