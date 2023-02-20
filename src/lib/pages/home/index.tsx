@@ -1,4 +1,4 @@
-import { Grid } from "@chakra-ui/react";
+import { Grid, Link, Text } from "@chakra-ui/react";
 
 import Map from "./components/Map";
 import SomeText from "./components/SomeText";
@@ -13,11 +13,23 @@ const Home = () => {
       />
       <StringList />
       <SomeText heading="" body="More strings coming soon!" />
-      <SomeText
-        heading=""
-        body="Convenient Drop-Off & Pickup / 9AM to 9PM / 7 Days a Week"
-      />
+      <Text fontSize="sm" textAlign="center" mt="20px" mb="-3">
+        Convenient Drop-Off & Pickup
+      </Text>
+      <Text fontSize="sm" textAlign="center" mb="-3">
+        9AM to 9PM
+      </Text>
+      <Text fontSize="sm" textAlign="center">
+        7 Days / Week
+      </Text>
       <Map />
+      <Link
+        fontSize="sm"
+        textAlign="center"
+        href="mailto:stringmeister@proton.me"
+      >
+        Contact Us
+      </Link>
     </Grid>
   );
 };
