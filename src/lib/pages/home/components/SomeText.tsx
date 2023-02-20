@@ -1,12 +1,17 @@
 import { Grid, Heading, Text } from "@chakra-ui/react";
 
-const SomeText = () => {
+interface SomeTextProps {
+  heading: string;
+  body: string;
+}
+
+const SomeText = ({ heading, body }: SomeTextProps) => {
   return (
     <Grid textAlign="center" gap={2}>
       <Heading fontSize="xl" fontWeight="bold">
-        West Toronto Tennis Racquet Services
+        {heading}
       </Heading>
-      <Text fontSize="sm">Our Offerings (Prices include string & labour):</Text>
+      <Text fontSize="sm">{body}</Text>
     </Grid>
   );
 };

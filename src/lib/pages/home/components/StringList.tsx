@@ -72,7 +72,7 @@ const strings = [
 ];
 
 const StringList = () => (
-  <SimpleGrid columns={[1, 2]} spacing={4}>
+  <SimpleGrid columns={[1, 2, null, 3]} spacing={4}>
     {strings.map((s) => (
       <StringCard
         brand={s.brand}
