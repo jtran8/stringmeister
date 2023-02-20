@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import {
   Card,
   Box,
@@ -72,8 +72,8 @@ const StringCard = ({
             <SpecsTable type={type} shape={shape} colour={colour} />
           </Collapse>
           <Center>
-            <Button variant="unstyled" onClick={onToggle}>
-              {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+            <Button variant="unstyled" size="xs" mb="-10px" onClick={onToggle}>
+              {isOpen ? <FaChevronUp /> : <FaChevronDown />}
             </Button>
           </Center>
         </Hide>
