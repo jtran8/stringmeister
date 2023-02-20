@@ -1,3 +1,4 @@
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import {
   Card,
   Box,
@@ -13,8 +14,6 @@ import {
   useDisclosure,
   Center,
 } from "@chakra-ui/react";
-
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
 import SpecsTable from "./SpecsTable";
 
