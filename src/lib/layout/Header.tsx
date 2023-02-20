@@ -1,22 +1,16 @@
-import { Box, Flex } from "@chakra-ui/react";
-
-import ThemeToggle from "./ThemeToggle";
+import { Flex, Text } from "@chakra-ui/react";
 
 const Header = () => {
   return (
     <Flex
-      as="header"
+      as="footer"
       width="full"
       align="center"
       alignSelf="flex-start"
       justifyContent="center"
-      gridGap={2}
     >
-      <Box marginLeft="auto">
-        <ThemeToggle />
-      </Box>
+      <Text fontSize="lg">String Meister</Text>
     </Flex>
   );
 };
-
 export default Header;
