@@ -13,6 +13,8 @@ import {
   Button,
   useDisclosure,
   Center,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 
 import SpecsTable from "./SpecsTable";
@@ -54,18 +56,27 @@ const StringCard = ({
           <Spacer />
           <Heading size="lg">${price}</Heading>
         </Flex>
-        <Collapse in={isOpen} unmountOnExit>
+        <Show above="sm">
           <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
           <Text fontSize="sm" mb="20px">
             {desc}
           </Text>
           <SpecsTable type={type} shape={shape} colour={colour} />
-        </Collapse>
-        <Center>
-          <Button variant="unstyled" onClick={onToggle}>
-            {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-          </Button>
-        </Center>
+        </Show>
+        <Hide above="md">
+          <Collapse in={isOpen} unmountOnExit>
+            <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
+            <Text fontSize="sm" mb="20px">
+              {desc}
+            </Text>
+            <SpecsTable type={type} shape={shape} colour={colour} />
+          </Collapse>
+          <Center>
+            <Button variant="unstyled" onClick={onToggle}>
+              {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+            </Button>
+          </Center>
+        </Hide>
       </CardBody>
     </Card>
   );
