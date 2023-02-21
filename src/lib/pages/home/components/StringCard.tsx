@@ -1,4 +1,3 @@
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import {
   Card,
   Box,
@@ -16,6 +15,7 @@ import {
   Show,
   Hide,
 } from "@chakra-ui/react";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 import SpecsTable from "./SpecsTable";
 
@@ -45,7 +45,7 @@ const StringCard = ({
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Card maxW="sm">
+    <Card maxW="md">
       <CardBody>
         <Flex gap={4} mb="20px">
           <Avatar name={brand} src={logo} />
