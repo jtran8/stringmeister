@@ -6,7 +6,7 @@ import StringCard from "./StringCard";
 
 const StringList = () => {
   return (
-    <SimpleGrid columns={[1, 2, null, 3]} spacing={4}>
+    <SimpleGrid columns={[1, 2, null, 3]} spacing={4} width="100%">
       {strings.map((s) => (
         <StringCard
           key={s.sku}
