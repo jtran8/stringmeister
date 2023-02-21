@@ -61,7 +61,7 @@ const ContactForm = () => {
         </FormControl>
         <HStack w="100%" spacing={4}>
           <FormControl isRequired>
-            <FormLabel fontSize="sm">Mains Tension (lbs)</FormLabel>
+            <FormLabel fontSize="sm">Main Tension (lbs)</FormLabel>
             <NumberInput id="mains" name="mains" max={60} min={20}>
               <NumberInputField />
               <NumberInputStepper>
@@ -76,7 +76,7 @@ const ContactForm = () => {
             />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel fontSize="sm">Crosses Tension (lbs)</FormLabel>
+            <FormLabel fontSize="sm">Cross Tension (lbs)</FormLabel>
             <NumberInput id="crosses" name="crosses" max={60} min={20}>
               <NumberInputField />
               <NumberInputStepper>
