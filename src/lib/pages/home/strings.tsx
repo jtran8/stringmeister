@@ -1,6 +1,7 @@
 import babolat from "../../../assets/img/babolat.jpg";
 import gamma from "../../../assets/img/gamma.jpg";
 import head from "../../../assets/img/head.jpg";
+import kirschbaum from "../../../assets/img/kirschbaum.jpg";
 import technifibre from "../../../assets/img/technifibre.jpg";
 import volkl from "../../../assets/img/volkl.jpg";
 import yonex from "../../../assets/img/yonex.jpg";
@@ -62,10 +63,10 @@ const strings = [
     colour: "Black",
   },
   {
-    brand: "Babolat",
-    logo: babolat,
-    sku: "Synthetic Gut 17/1.25",
-    pic: "https://cdn11.bigcommerce.com/s-u71vk7f/images/stencil/1280x1280/products/2868/23925/babolat-synthetic-gut-17-1-25mm-200m-reel-natural__98198.1607105777.jpg?c=2",
+    brand: "Kirschbaum",
+    logo: kirschbaum,
+    sku: "Synthetic Gut 16/1.30",
+    pic: "https://m.media-amazon.com/images/I/61zOsrx00cL._AC_SX425_.jpg",
     price: 20,
     desc: "The perfect option for the player who wants great all around playability. In addition to its comfortably crisp feel, this synthetic gut offers a nice balance of comfort, power, durability and spin.",
     type: "Synthetic Gut",
