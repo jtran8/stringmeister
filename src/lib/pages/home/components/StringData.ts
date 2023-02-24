@@ -9,4 +9,5 @@ export default interface StringData {
   type: string;
   shape: string;
   color: string;
+  [x: string]: any;
 }
