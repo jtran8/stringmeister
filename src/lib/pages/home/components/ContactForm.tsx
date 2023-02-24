@@ -16,11 +16,32 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
+import { createClient } from "@supabase/supabase-js";
+import { useState, useEffect } from "react";
 
 import goat from "../../../../assets/img/goat.jpg";
-import strings from "../strings";
+
+import type StringData from "./StringData";
+
+const supabase = createClient(
+  `${import.meta.env.VITE_PUBLIC_SUPABASE_URL}`,
+  `${import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY}`
+);
 
 const ContactForm = () => {
+  const [stringList, setStrings] = useState<StringData[] | null>([]);
+
+  useEffect(() => {
+    const fetchStrings = async () => {
+      const data = await supabase
+        .from("strings")
+        .select("*")
+        .order("price", { ascending: false });
+      setStrings(data.data);
+    };
+    fetchStrings();
+  }, []);
+
   const [state, handleSubmit] = useForm("xeqwgzjz");
   if (state.succeeded) {
     return (
@@ -47,9 +68,10 @@ const ContactForm = () => {
         <FormControl isRequired>
           <FormLabel fontSize="sm">Select String</FormLabel>
           <Select id="string" name="string" placeholder="Select">
-            {strings.map((s) => (
-              <option key={s.sku}>{s.brand + spacing + s.sku}</option>
-            ))}
+            {stringList &&
+              stringList.map((s) => (
+                <option key={s.sku}>{s.brand + spacing + s.sku}</option>
+              ))}
             <option>Hybrid - put string choices in notes</option>
             <option>Bring your own - labour $20</option>
           </Select>
