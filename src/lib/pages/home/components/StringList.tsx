@@ -20,9 +20,9 @@ const StringList = ({ stringList }: StringData) => {
   );
 
   return (
-    <VStack spacing={4}>
+    <VStack w="100%" spacing={4}>
       <SearchBar onSearchChange={handleSearchChange} />
-      <SimpleGrid columns={[1, 2, null, 3]} spacing={4} width="100%">
+      <SimpleGrid columns={[1, 2, null, 3]} spacing={4} w="100%">
         {filteredStrings.length > 0 ? (
           filteredStrings.map((s) => (
             <StringCard
