@@ -1,9 +1,9 @@
 import { Table, Tbody, Th, Tr, Td, TableContainer } from "@chakra-ui/react";
 
 interface SpecsProps {
-  type: string;
-  shape: string;
-  colour: string;
+  type?: string;
+  shape?: string;
+  colour?: string;
 }
 
 const SpecsTable = ({ type, shape, colour }: SpecsProps) => (

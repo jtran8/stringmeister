@@ -9,27 +9,13 @@ import {
   Collapse,
   Flex,
   Spacer,
-  Button,
   useDisclosure,
-  Center,
   Show,
   Hide,
 } from "@chakra-ui/react";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 import SpecsTable from "./SpecsTable";
-
-interface StringProps {
-  brand: string;
-  logo: string;
-  sku: string;
-  pic: string;
-  price: number;
-  desc: string;
-  type: string;
-  shape: string;
-  colour: string;
-}
+import type StringData from "./StringData";
 
 const StringCard = ({
   brand,
@@ -41,13 +27,13 @@ const StringCard = ({
   type,
   shape,
   colour,
-}: StringProps) => {
+}: StringData) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Card maxW="md">
+    <Card maxW="md" onClick={onToggle}>
       <CardBody>
-        <Flex gap={4} mb="20px">
+        <Flex gap={4}>
           <Avatar name={brand} src={logo} />
           <Box>
             <Heading size="sm">{brand}</Heading>
@@ -57,7 +43,7 @@ const StringCard = ({
           <Heading size="lg">${price}</Heading>
         </Flex>
         <Show above="sm">
-          <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
+          <Image src={pic} alt="{sku}" borderRadius="lg" my="20px" />
           <Text fontSize="sm" mb="20px">
             {desc}
           </Text>
@@ -71,11 +57,6 @@ const StringCard = ({
             </Text>
             <SpecsTable type={type} shape={shape} colour={colour} />
           </Collapse>
-          <Center>
-            <Button variant="unstyled" size="xs" mb="-10px" onClick={onToggle}>
-              {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-            </Button>
-          </Center>
         </Hide>
       </CardBody>
     </Card>

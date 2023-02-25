@@ -16,32 +16,12 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
-import { createClient } from "@supabase/supabase-js";
-import { useState, useEffect } from "react";
 
-import goat from "../../../../assets/img/goat.jpg";
+import goat from "../../../../assets/img/goat.webp";
 
 import type StringData from "./StringData";
 
-const supabase = createClient(
-  `${import.meta.env.VITE_PUBLIC_SUPABASE_URL}`,
-  `${import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY}`
-);
-
-const ContactForm = () => {
-  const [stringList, setStrings] = useState<StringData[] | null>([]);
-
-  useEffect(() => {
-    const fetchStrings = async () => {
-      const data = await supabase
-        .from("strings")
-        .select("*")
-        .order("price", { ascending: false });
-      setStrings(data.data);
-    };
-    fetchStrings();
-  }, []);
-
+const ContactForm = ({ stringList }: StringData) => {
   const [state, handleSubmit] = useForm("xeqwgzjz");
   if (state.succeeded) {
     return (
