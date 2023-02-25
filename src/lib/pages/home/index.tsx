@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 
 import ContactCard from "./components/ContactCard";
+import LoadingCard from "./components/LoadingCard";
 import MapCard from "./components/MapCard";
 import SomeText from "./components/SomeText";
 import type StringData from "./components/StringData";
@@ -15,6 +16,7 @@ const supabase = createClient(
 
 const Home = () => {
   const [stringList, setStrings] = useState<StringData[] | null>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchStrings = async () => {
@@ -23,6 +25,7 @@ const Home = () => {
         .select("*")
         .order("price", { ascending: false });
       setStrings(data.data);
+      setIsLoading(false);
     };
     fetchStrings();
   }, []);
@@ -32,7 +35,7 @@ const Home = () => {
         heading="West Toronto Stringing Services"
         line1="Our Offerings (prices include string & labour)"
       />
-      <StringList stringList={stringList} />
+      {isLoading ? <LoadingCard /> : <StringList stringList={stringList} />}
       <SomeText heading="" line1="More strings coming soon!" />
       <SomeText
         heading="Other Services"
