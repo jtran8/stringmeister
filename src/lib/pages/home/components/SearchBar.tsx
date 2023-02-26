@@ -1,5 +1,6 @@
-import { Input } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import type { ChangeEvent, FC } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
 
 interface SearchProps {
   onSearchChange: (searchTerm: string) => void;
@@ -11,7 +12,17 @@ const SearchBar: FC<SearchProps> = ({ onSearchChange }) => {
   };
 
   return (
-    <Input type="text" w="100%" placeholder="Search" onChange={handleSearch} />
+    <InputGroup>
+      <InputLeftElement>
+        <AiOutlineSearch />
+      </InputLeftElement>
+      <Input
+        type="text"
+        w="100%"
+        placeholder="Search"
+        onChange={handleSearch}
+      />
+    </InputGroup>
   );
 };
 

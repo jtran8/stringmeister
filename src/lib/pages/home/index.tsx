@@ -1,4 +1,4 @@
-import { SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, SimpleGrid, VStack } from "@chakra-ui/react";
 import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 
@@ -31,10 +31,19 @@ const Home = () => {
   }, []);
   return (
     <VStack gap={4}>
-      <SomeText
-        heading="West Toronto Stringing Services"
-        line1="Our Offerings (prices include string & labour)"
-      />
+      <Box display={{ base: "block", md: "none" }}>
+        <SomeText
+          heading="West Toronto Stringing Services"
+          line1="Prices include string & labour."
+          line2="Tap a string to see more info!"
+        />
+      </Box>
+      <Box display={{ base: "none", md: "block" }}>
+        <SomeText
+          heading="West Toronto Stringing Services"
+          line1="Prices include string & labour."
+        />
+      </Box>
       {isLoading ? <LoadingCard /> : <StringList stringList={stringList} />}
       <SomeText heading="" line1="More strings coming soon!" />
       <SomeText

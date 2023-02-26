@@ -17,7 +17,7 @@ const Header = () => {
       justifyContent="center"
     >
       <Image src={logo} w={["100%", "75%", null, "50%"]} />
-      <Image src={racquets} w={["40%", "25%", null, "15%"]} />
+      <Image src={racquets} w={["35%", "25%", null, "15%"]} />
     </VStack>
   );
 };
