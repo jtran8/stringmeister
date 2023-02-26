@@ -35,7 +35,7 @@ const StringCard = ({
     <Card maxW="md" onClick={onToggle}>
       <CardBody>
         <VStack w="100%" gap={4}>
-          <Flex w="100%" gap={4}>
+          <Flex w="100%" gap={4} alignItems="center">
             <Avatar name={brand} src={logo} />
             <Box>
               <Heading size="sm">{brand}</Heading>
