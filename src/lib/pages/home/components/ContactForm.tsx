@@ -14,6 +14,7 @@ import {
   Textarea,
   FormControl,
   FormLabel,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
 
@@ -31,10 +32,37 @@ const ContactForm = ({ stringList }: StringData) => {
       </VStack>
     );
   }
+
+  function makeId(length) {
+    let result = "";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let counter = 0;
+    while (counter < length) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      const randomChar = characters[randomIndex];
+
+      if (counter % 2 === 0) {
+        result += randomChar.toUpperCase();
+      } else {
+        result += randomChar;
+      }
+      counter += 1;
+    }
+    return result;
+  }
+
+  const orderId = makeId(6);
   const spacing = " - ";
+
   return (
     <form onSubmit={handleSubmit}>
       <VStack spacing={4}>
+        <VisuallyHidden>
+          <FormControl>
+            <FormLabel fontSize="sm">Order Id</FormLabel>
+            <Input id="orderId" value={orderId} type="text" name="orderId" />
+          </FormControl>
+        </VisuallyHidden>
         <FormControl isRequired>
           <FormLabel fontSize="sm">Name</FormLabel>
           <Input id="name" type="text" name="name" />
