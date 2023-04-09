@@ -9,5 +9,6 @@ export default interface StringData {
   type?: string;
   shape?: string;
   colour?: string;
+  inStock?: boolean;
   [key: string]: any;
 }

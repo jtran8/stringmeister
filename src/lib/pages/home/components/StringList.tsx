@@ -24,20 +24,23 @@ const StringList = ({ stringList }: StringData) => {
       <SearchBar onSearchChange={handleSearchChange} />
       <SimpleGrid columns={[1, 2, null, 3]} spacing={4} w="100%">
         {filteredStrings.length > 0 ? (
-          filteredStrings.map((s) => (
-            <StringCard
-              key={s.id}
-              brand={s.brand}
-              logo={s.logo}
-              sku={s.sku}
-              pic={s.pic}
-              price={s.price}
-              desc={s.desc}
-              type={s.type}
-              shape={s.shape}
-              colour={s.colour}
-            />
-          ))
+          filteredStrings.map(
+            (s) =>
+              s.inStock && (
+                <StringCard
+                  key={s.id}
+                  brand={s.brand}
+                  logo={s.logo}
+                  sku={s.sku}
+                  pic={s.pic}
+                  price={s.price}
+                  desc={s.desc}
+                  type={s.type}
+                  shape={s.shape}
+                  colour={s.colour}
+                />
+              )
+          )
         ) : (
           <NotFoundCard />
         )}
