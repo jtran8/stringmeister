@@ -1,4 +1,4 @@
-import { VStack, SimpleGrid } from "@chakra-ui/react";
+import { Hide, VStack, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 import NotFoundCard from "./NotFoundCard";
@@ -22,6 +22,9 @@ const StringList = ({ stringList }: StringData) => {
   return (
     <VStack w="100%" spacing={4}>
       <SearchBar onSearchChange={handleSearchChange} />
+      <Hide above="sm">
+        <Text fontSize="sm">Tap for more details.</Text>
+      </Hide>
       <SimpleGrid columns={[1, 2, null, 3]} spacing={4} w="100%">
         {filteredStrings.length > 0 ? (
           filteredStrings.map(
