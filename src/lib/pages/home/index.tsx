@@ -35,13 +35,12 @@ const Home = () => {
         heading="West Toronto Stringing Services"
         line1="Prices include string & labour."
       />
-
       {isLoading ? <LoadingCard /> : <StringList stringList={stringList} />}
       <SomeText heading="" line1="More strings coming soon!" />
       <SomeText
         heading="Other Services"
-        line1="Wilson Pro Overgrip (White) - $5"
-        line2="Yonex Supergrap Overgrip (Black) - $5"
+        line1="Wilson Pro Overgrip (White) - $3"
+        line2="Pro's Pro Overgrip Tape Cover (Black) - $5"
       />
       <SimpleGrid columns={[1, 2]} spacing={4} minW="100%">
         <MapCard />
