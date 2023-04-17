@@ -48,7 +48,7 @@ const ItemCard = ({
             <Image
               src={pic}
               alt="{sku}"
-              h="330px"
+              h="280px"
               object-fit="contain"
               borderRadius="lg"
             />
