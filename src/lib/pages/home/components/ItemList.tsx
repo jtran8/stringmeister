@@ -1,19 +1,19 @@
-import { Hide, VStack, SimpleGrid, Text } from "@chakra-ui/react";
+import { VStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 
+import ItemCard from "./ItemCard";
 import NotFoundCard from "./NotFoundCard";
-import SearchBar from "./SearchBar";
-import StringCard from "./StringCard";
+// import SearchBar from "./SearchBar";
 import type StringData from "./StringData";
 
-const StringList = ({ stringList }: StringData) => {
+const ItemList = ({ itemList }: StringData) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = (searchInput: string) => {
-    setSearchTerm(searchInput);
-  };
+  // const handleSearchChange = (searchInput: string) => {
+  //   setSearchTerm(searchInput);
+  // };
 
-  const filteredStrings = stringList.filter(
+  const filteredItems = itemList.filter(
     (item) =>
       item.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.sku.toLowerCase().includes(searchTerm.toLowerCase())
@@ -21,16 +21,13 @@ const StringList = ({ stringList }: StringData) => {
 
   return (
     <VStack w="100%" spacing={4}>
-      <SearchBar onSearchChange={handleSearchChange} />
-      <Hide above="sm">
-        <Text fontSize="sm">Tap for more details.</Text>
-      </Hide>
+      {/* <SearchBar onSearchChange={handleSearchChange} /> */}
       <SimpleGrid columns={[1, 2, null, 3]} spacing={4} w="100%">
-        {filteredStrings.length > 0 ? (
-          filteredStrings.map(
+        {filteredItems.length > 0 ? (
+          filteredItems.map(
             (s) =>
               s.inStock && (
-                <StringCard
+                <ItemCard
                   key={s.id}
                   brand={s.brand}
                   logo={s.logo}
@@ -52,4 +49,4 @@ const StringList = ({ stringList }: StringData) => {
   );
 };
 
-export default StringList;
+export default ItemList;

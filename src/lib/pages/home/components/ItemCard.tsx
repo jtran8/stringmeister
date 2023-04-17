@@ -18,7 +18,7 @@ import {
 import SpecsTable from "./SpecsTable";
 import type StringData from "./StringData";
 
-const StringCard = ({
+const ItemCard = ({
   brand,
   logo,
   sku,
@@ -45,7 +45,13 @@ const StringCard = ({
             <Heading size="lg">${price}</Heading>
           </Flex>
           <Show above="sm">
-            <Image src={pic} alt="{sku}" borderRadius="lg" />
+            <Image
+              src={pic}
+              alt="{sku}"
+              h="330px"
+              object-fit="contain"
+              borderRadius="lg"
+            />
             <Text fontSize="sm" mb="20px">
               {desc}
             </Text>
@@ -66,4 +72,4 @@ const StringCard = ({
   );
 };
 
-export default StringCard;
+export default ItemCard;
