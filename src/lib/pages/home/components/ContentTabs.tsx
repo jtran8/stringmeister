@@ -22,24 +22,30 @@ const ContentTabs = ({ stringList, gripList, otherList }: StringData) => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Hide above="sm">
-            <Text fontSize="sm">Tap for more details.</Text>
-          </Hide>
+          <Center mb={4}>
+            <Hide above="sm">
+              <Text fontSize="sm">Tap item for more details.</Text>
+            </Hide>
+          </Center>
           <ItemList itemList={stringList} />
         </TabPanel>
         <TabPanel>
-          <Hide above="sm">
-            <Text fontSize="sm">Tap for more details.</Text>
-          </Hide>
+          <Center mb={4}>
+            <Hide above="sm">
+              <Text fontSize="sm">Tap item for more details.</Text>
+            </Hide>
+          </Center>
           <ItemList itemList={gripList} />
           <Center mt={4}>
             <Text fontSize="sm">Overgrip install free with stringing.</Text>
           </Center>
         </TabPanel>
         <TabPanel>
-          <Hide above="sm">
-            <Text fontSize="sm">Tap for more details.</Text>
-          </Hide>
+          <Center mb={4}>
+            <Hide above="sm">
+              <Text fontSize="sm">Tap item for more details.</Text>
+            </Hide>
+          </Center>
           <ItemList itemList={otherList} />
         </TabPanel>
       </TabPanels>
