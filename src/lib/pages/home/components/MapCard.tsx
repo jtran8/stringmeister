@@ -18,6 +18,7 @@ const MapCard = () => {
           <Text>Convenient Drop-Off & Pickup</Text>
           <Text>9AM to 9PM</Text>
           <Text>7 Days / Week</Text>
+          <Text>Call or Text: 647-878-8619</Text>
         </VStack>
         <AspectRatio ratio={1}>
           <iframe
