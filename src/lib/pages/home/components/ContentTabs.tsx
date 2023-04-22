@@ -10,9 +10,9 @@ import {
 } from "@chakra-ui/react";
 
 import ItemList from "./ItemList";
-import type StringData from "./StringData";
+import type ProductData from "./ProductData";
 
-const ContentTabs = ({ stringList, gripList, otherList }: StringData) => {
+const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
   return (
     <Tabs isFitted variant="soft-rounded" colorScheme="green" h="100%" w="100%">
       <TabList>

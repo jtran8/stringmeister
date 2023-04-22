@@ -6,7 +6,7 @@ import ContactCard from "./components/ContactCard";
 import ContentTabs from "./components/ContentTabs";
 import LoadingCard from "./components/LoadingCard";
 import MapCard from "./components/MapCard";
-import type StringData from "./components/StringData";
+import type ProductData from "./components/ProductData";
 
 const supabase = createClient(
   `${import.meta.env.VITE_PUBLIC_SUPABASE_URL}`,
@@ -14,9 +14,9 @@ const supabase = createClient(
 );
 
 const Home = () => {
-  const [stringList, setStrings] = useState<StringData[] | null>([]);
-  const [gripList, setGrips] = useState<StringData[] | null>([]);
-  const [otherList, setOther] = useState<StringData[] | null>([]);
+  const [stringList, setStrings] = useState<ProductData[] | null>([]);
+  const [gripList, setGrips] = useState<ProductData[] | null>([]);
+  const [otherList, setOther] = useState<ProductData[] | null>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchStrings = async () => {

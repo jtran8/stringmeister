@@ -15,8 +15,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
+import type ProductData from "./ProductData";
 import SpecsTable from "./SpecsTable";
-import type StringData from "./StringData";
 
 const ItemCard = ({
   brand,
@@ -25,10 +25,8 @@ const ItemCard = ({
   pic,
   price,
   desc,
-  type,
-  shape,
-  colour,
-}: StringData) => {
+  specs,
+}: ProductData) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -55,7 +53,7 @@ const ItemCard = ({
             <Text fontSize="sm" mb="20px">
               {desc}
             </Text>
-            <SpecsTable type={type} shape={shape} colour={colour} />
+            <SpecsTable specs={specs} />
           </Show>
           <Hide above="md">
             <Collapse in={isOpen} unmountOnExit>
@@ -63,7 +61,7 @@ const ItemCard = ({
               <Text fontSize="sm" mb="20px">
                 {desc}
               </Text>
-              <SpecsTable type={type} shape={shape} colour={colour} />
+              <SpecsTable specs={specs} />
             </Collapse>
           </Hide>
         </VStack>

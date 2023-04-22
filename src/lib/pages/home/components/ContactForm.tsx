@@ -20,9 +20,9 @@ import { useForm, ValidationError } from "@formspree/react";
 
 import goat from "../../../../assets/img/goat.webp";
 
-import type StringData from "./StringData";
+import type ProductData from "./ProductData";
 
-const ContactForm = ({ stringList }: StringData) => {
+const ContactForm = ({ stringList }: ProductData) => {
   const [state, handleSubmit] = useForm("xeqwgzjz");
   if (state.succeeded) {
     return (

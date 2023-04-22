@@ -1,9 +1,9 @@
 import { Card, CardBody, Heading } from "@chakra-ui/react";
 
 import ContactForm from "./ContactForm";
-import type StringData from "./StringData";
+import type ProductData from "./ProductData";
 
-const ContactCard = ({ stringList }: StringData) => {
+const ContactCard = ({ stringList }: ProductData) => {
   return (
     <Card w="100%" maxW="xl">
       <CardBody>

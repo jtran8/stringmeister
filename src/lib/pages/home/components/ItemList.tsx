@@ -4,10 +4,10 @@ import { useState } from "react";
 import ItemCard from "./ItemCard";
 import NotFoundCard from "./NotFoundCard";
 // import SearchBar from "./SearchBar";
-import type StringData from "./StringData";
+import type ProductData from "./ProductData";
 
-const ItemList = ({ itemList }: StringData) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const ItemList = ({ itemList }: ProductData) => {
+  const [searchTerm] = useState("");
 
   // const handleSearchChange = (searchInput: string) => {
   //   setSearchTerm(searchInput);
@@ -38,6 +38,7 @@ const ItemList = ({ itemList }: StringData) => {
                   type={s.type}
                   shape={s.shape}
                   colour={s.colour}
+                  specs={s.specs}
                 />
               )
           )

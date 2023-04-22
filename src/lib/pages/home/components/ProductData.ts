@@ -1,4 +1,4 @@
-export default interface StringData {
+export default interface ProductData {
   id?: number;
   brand?: string;
   logo?: string;
@@ -10,5 +10,8 @@ export default interface StringData {
   shape?: string;
   colour?: string;
   inStock?: boolean;
+  specs?: {
+    [key: string]: any;
+  };
   [key: string]: any;
 }
