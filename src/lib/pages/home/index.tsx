@@ -1,4 +1,4 @@
-import { SimpleGrid, VStack } from "@chakra-ui/react";
+import { Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 
@@ -6,7 +6,6 @@ import ContactCard from "./components/ContactCard";
 import ContentTabs from "./components/ContentTabs";
 import LoadingCard from "./components/LoadingCard";
 import MapCard from "./components/MapCard";
-import SomeText from "./components/SomeText";
 import type StringData from "./components/StringData";
 
 const supabase = createClient(
@@ -53,10 +52,15 @@ const Home = () => {
 
   return (
     <VStack gap={4}>
-      <SomeText
-        heading="West Toronto Stringing Services"
-        line1="Prices include string & labour."
-      />
+      <VStack>
+        <Heading fontSize="xl" fontWeight="normal">
+          West Toronto Stringing Services
+        </Heading>
+        <Text fontSize="sm">Prices include string & labour.</Text>
+        <Text fontSize="sm" fontWeight="bold">
+          $5 off your 1st stringing.
+        </Text>
+      </VStack>
       {isLoading ? (
         <LoadingCard />
       ) : (

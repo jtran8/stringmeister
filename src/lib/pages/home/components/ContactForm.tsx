@@ -77,11 +77,14 @@ const ContactForm = ({ stringList }: StringData) => {
           <FormLabel fontSize="sm">Select String</FormLabel>
           <Select id="string" name="string" placeholder="Select">
             {stringList &&
-              stringList.map((s) => (
-                <option key={s.sku}>{s.brand + spacing + s.sku}</option>
-              ))}
-            <option>Hybrid - put string choices in notes</option>
-            <option>Bring your own - labour $20</option>
+              stringList.map(
+                (s) =>
+                  s.inStock && (
+                    <option key={s.sku}>{s.brand + spacing + s.sku}</option>
+                  )
+              )}
+            <option>Hybrid - Put Strings in Notes</option>
+            <option>Bring Your Own - Labour $18</option>
           </Select>
           <ValidationError
             prefix="String"
@@ -123,7 +126,11 @@ const ContactForm = ({ stringList }: StringData) => {
         </HStack>
         <FormControl>
           <FormLabel fontSize="sm">Notes</FormLabel>
-          <Textarea id="notes" name="notes" />
+          <Textarea
+            id="notes"
+            name="notes"
+            placeholder="Phone #, hybrid stringing, other items you wish to purchase, etc."
+          />
         </FormControl>
         <Button
           mt={4}
