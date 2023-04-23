@@ -26,6 +26,7 @@ const ItemCard = ({
   price,
   desc,
   specs,
+  stats,
 }: ProductData) => {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -53,7 +54,7 @@ const ItemCard = ({
             <Text fontSize="sm" mb="20px">
               {desc}
             </Text>
-            <SpecsTable specs={specs} />
+            <SpecsTable specs={specs} stats={stats} sku={sku} />
           </Show>
           <Hide above="md">
             <Collapse in={isOpen} unmountOnExit>
@@ -61,7 +62,7 @@ const ItemCard = ({
               <Text fontSize="sm" mb="20px">
                 {desc}
               </Text>
-              <SpecsTable specs={specs} />
+              <SpecsTable specs={specs} stats={stats} sku={sku} />
             </Collapse>
           </Hide>
         </VStack>

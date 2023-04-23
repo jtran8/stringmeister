@@ -11,7 +11,10 @@ export default interface ProductData {
   colour?: string;
   inStock?: boolean;
   specs?: {
-    [key: string]: any;
+    [key: string]: string;
+  };
+  stats?: {
+    [key: string]: number;
   };
   [key: string]: any;
 }
