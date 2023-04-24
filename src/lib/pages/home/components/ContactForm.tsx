@@ -83,6 +83,7 @@ const ContactForm = ({ stringList }: ProductData) => {
                     <option key={s.sku}>{s.brand + spacing + s.sku}</option>
                   )
               )}
+            <option>Free String Consultation</option>
             <option>Hybrid - Put Strings in Notes</option>
             <option>Bring Your Own - Labour $18</option>
           </Select>
