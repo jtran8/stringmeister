@@ -23,7 +23,7 @@ const SpecsTable = ({ specs, stats, sku }: Props) => (
             <Tr key={sku + stat}>
               <Th pt={2}>{stat}</Th>
               <Td>
-                <SpecBar cat={stat} rating={stats[stat]} />
+                <SpecBar cat={stat} rating={stats} />
               </Td>
             </Tr>
           ))}
