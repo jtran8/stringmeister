@@ -21,7 +21,7 @@ const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
         <Tab>Balls & Other</Tab>
       </TabList>
       <TabPanels>
-        <TabPanel>
+        <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
               <Text fontSize="sm">Tap item for more details.</Text>
@@ -29,7 +29,7 @@ const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
           </Center>
           <ItemList itemList={stringList} />
         </TabPanel>
-        <TabPanel>
+        <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
               <Text fontSize="sm">Tap item for more details.</Text>
@@ -40,7 +40,7 @@ const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
             <Text fontSize="sm">Overgrip install free with stringing.</Text>
           </Center>
         </TabPanel>
-        <TabPanel>
+        <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
               <Text fontSize="sm">Tap item for more details.</Text>
