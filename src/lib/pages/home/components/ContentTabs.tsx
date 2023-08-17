@@ -37,7 +37,7 @@ const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
           </Center>
           <ItemList itemList={gripList} />
           <Center mt={4}>
-            <Text fontSize="sm">Overgrip install free with stringing.</Text>
+            <Text fontSize="sm">Free overgrip installation.</Text>
           </Center>
         </TabPanel>
         <TabPanel px={0}>
