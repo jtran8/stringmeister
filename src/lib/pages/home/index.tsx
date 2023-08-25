@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import ContactCard from "./components/ContactCard";
 import ContentTabs from "./components/ContentTabs";
+import LaborCard from "./components/LaborCard";
 import LoadingCard from "./components/LoadingCard";
 import MapCard from "./components/MapCard";
 import type ProductData from "./components/ProductData";
@@ -52,14 +53,11 @@ const Home = () => {
 
   return (
     <VStack gap={4}>
-      <VStack>
+      <VStack gap={2}>
         <Heading fontSize="xl" fontWeight="normal">
           West Toronto Stringing Services
         </Heading>
-        <Text fontSize="sm">Prices include string & labour.</Text>
-        <Text fontSize="sm" fontWeight="bold">
-          $5 off your 1st stringing.
-        </Text>
+        <LaborCard />
       </VStack>
       {isLoading ? (
         <LoadingCard />
