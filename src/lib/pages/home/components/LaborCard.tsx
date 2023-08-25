@@ -2,7 +2,7 @@ import { Card, CardBody, Heading, Text, VStack } from "@chakra-ui/react";
 
 const LaborCard = () => {
   return (
-    <Card size="md" textAlign="center">
+    <Card w="100%" textAlign="center">
       <CardBody>
         <VStack>
           <Heading size="md">Labour</Heading>
