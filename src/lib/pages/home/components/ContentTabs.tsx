@@ -12,11 +12,17 @@ import {
 import ItemList from "./ItemList";
 import type ProductData from "./ProductData";
 
-const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
+const ContentTabs = ({
+  stringList,
+  customList,
+  gripList,
+  otherList,
+}: ProductData) => {
   return (
     <Tabs isFitted variant="soft-rounded" colorScheme="green" h="100%" w="100%">
       <TabList>
         <Tab>Strings</Tab>
+        <Tab>Services</Tab>
         <Tab>Grips</Tab>
         <Tab>Balls & Other</Tab>
       </TabList>
@@ -28,6 +34,14 @@ const ContentTabs = ({ stringList, gripList, otherList }: ProductData) => {
             </Hide>
           </Center>
           <ItemList itemList={stringList} />
+        </TabPanel>
+        <TabPanel px={0}>
+          <Center mb={4}>
+            <Hide above="sm">
+              <Text fontSize="sm">Tap item for more details.</Text>
+            </Hide>
+          </Center>
+          <ItemList itemList={customList} />
         </TabPanel>
         <TabPanel px={0}>
           <Center mb={4}>

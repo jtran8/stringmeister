@@ -1,4 +1,4 @@
-import { Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Heading, SimpleGrid, VStack } from "@chakra-ui/react";
 import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 
@@ -16,6 +16,7 @@ const supabase = createClient(
 
 const Home = () => {
   const [stringList, setStrings] = useState<ProductData[] | null>([]);
+  const [customList, setCustom] = useState<ProductData[] | null>([]);
   const [gripList, setGrips] = useState<ProductData[] | null>([]);
   const [otherList, setOther] = useState<ProductData[] | null>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -26,6 +27,14 @@ const Home = () => {
       .select("*")
       .order("price", { ascending: false });
     setStrings(data.data);
+  };
+
+  const fetchCustom = async () => {
+    const data = await supabase
+      .from("custom")
+      .select("*")
+      .order("price", { ascending: false });
+    setCustom(data.data);
   };
 
   const fetchGrips = async () => {
@@ -46,6 +55,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchStrings();
+    fetchCustom();
     fetchGrips();
     fetchOther();
     setIsLoading(false);
@@ -64,6 +74,7 @@ const Home = () => {
       ) : (
         <ContentTabs
           stringList={stringList}
+          customList={customList}
           gripList={gripList}
           otherList={otherList}
         />

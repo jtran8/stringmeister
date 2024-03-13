@@ -29,17 +29,17 @@ const ItemList = ({ itemList }: ProductData) => {
               s.inStock && (
                 <ItemCard
                   key={s.id}
-                  brand={s.brand}
-                  logo={s.logo}
+                  brand={s?.brand}
+                  logo={s?.logo}
                   sku={s.sku}
-                  pic={s.pic}
+                  pic={s?.pic}
                   price={s.price}
                   desc={s.desc}
-                  type={s.type}
-                  shape={s.shape}
-                  colour={s.colour}
-                  specs={s.specs}
-                  stats={s.stats}
+                  type={s?.type}
+                  shape={s?.shape}
+                  colour={s?.colour}
+                  specs={s?.specs}
+                  stats={s?.stats}
                 />
               )
           )

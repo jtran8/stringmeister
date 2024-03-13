@@ -44,25 +44,29 @@ const ItemCard = ({
             <Heading size="lg">${price}</Heading>
           </Flex>
           <Show above="sm">
-            <Image
-              src={pic}
-              alt="{sku}"
-              h="280px"
-              object-fit="contain"
-              borderRadius="lg"
-            />
+            {pic && (
+              <Image
+                src={pic}
+                alt="{sku}"
+                h="280px"
+                object-fit="contain"
+                borderRadius="lg"
+              />
+            )}
             <Text fontSize="sm" mb="20px">
               {desc}
             </Text>
-            <SpecsTable specs={specs} stats={stats} sku={sku} />
+            {specs && <SpecsTable specs={specs} stats={stats} sku={sku} />}
           </Show>
           <Hide above="md">
             <Collapse in={isOpen} unmountOnExit>
-              <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
+              {pic && (
+                <Image src={pic} alt="{sku}" borderRadius="lg" mb="20px" />
+              )}
               <Text fontSize="sm" mb="20px">
                 {desc}
               </Text>
-              <SpecsTable specs={specs} stats={stats} sku={sku} />
+              {specs && <SpecsTable specs={specs} stats={stats} sku={sku} />}
             </Collapse>
           </Hide>
         </VStack>
