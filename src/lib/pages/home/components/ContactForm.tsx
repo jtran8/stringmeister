@@ -85,7 +85,7 @@ const ContactForm = ({ stringList }: ProductData) => {
               )}
             <option>Free String Consultation</option>
             <option>Hybrid - Put Strings in Notes</option>
-            <option>Bring Your Own - Labour $18</option>
+            <option>Bring Your Own - Labour $15</option>
           </Select>
           <ValidationError
             prefix="String"
