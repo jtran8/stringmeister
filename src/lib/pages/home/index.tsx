@@ -25,7 +25,9 @@ const Home = () => {
     const data = await supabase
       .from("strings")
       .select("*")
-      .order("price", { ascending: false });
+      .order("price", { ascending: false })
+      .order("brand", { ascending: true })
+      .order("sku", { ascending: true });
     setStrings(data.data);
   };
 
