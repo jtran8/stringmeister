@@ -13,11 +13,11 @@ interface Props {
   rating: any;
 }
 
-const colorPicker = (value: number) => {
+const colorPicker = (value: number | string) => {
   let color = "";
-  if (value >= 9) color = "#50cd89";
-  else if (value >= 7) color = "#009ef7";
-  else if (value >= 5) color = "#f6b26b";
+  if (value >= 9 || value === "Hi") color = "#50cd89";
+  else if (value >= 7 || value === "Mid") color = "#009ef7";
+  else if (value >= 5 || value === "Low") color = "#f6b26b";
   else color = "#f1416c";
   return color;
 };
@@ -27,7 +27,7 @@ const SpecBar = ({ cat, rating }: Props) => {
 
   return (
     <Text fontWeight="black" color={colorPicker(rating[cat])}>
-      {rating[cat].toFixed(1)}
+      {rating[cat]}
     </Text>
     // <ResponsiveContainer width="100%" height={20}>
     //   <BarChart
