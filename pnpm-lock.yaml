@@ -49,6 +49,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.8.1
     version: 6.8.1(react-dom@18.2.0)(react@18.2.0)
+  react-scroll:
+    specifier: ^1.9.0
+    version: 1.9.0(react-dom@18.2.0)(react@18.2.0)
   react-slick:
     specifier: ^0.30.2
     version: 0.30.2(react-dom@18.2.0)(react@18.2.0)
@@ -4958,6 +4961,10 @@ packages:
     resolution: {integrity: sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==}
     dev: true
 
+  /lodash.throttle@4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+    dev: false
+
   /lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
     dev: true
@@ -5646,6 +5653,18 @@ packages:
     dependencies:
       '@remix-run/router': 1.3.2
       react: 18.2.0
+    dev: false
+
+  /react-scroll@1.9.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-mamNcaX9Ng+JeSbBu97nWwRhYvL2oba+xR2GxvyXsbDeGP+gkYIKZ+aDMMj/n20TbV9SCWm/H7nyuNTSiXA6yA==}
+    peerDependencies:
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      lodash.throttle: 4.1.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-side-effect@2.1.2(react@18.2.0):
