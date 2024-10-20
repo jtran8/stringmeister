@@ -75,7 +75,7 @@ const Home = () => {
         <Location />
       </Box>
       <Box w={["80%", null, null, "50%"]}>
-        <ContactForm />
+        <ContactForm stringList={stringList} />
       </Box>
     </VStack>
   );

@@ -15,6 +15,7 @@ import {
   Textarea,
   FormControl,
   FormLabel,
+  SimpleGrid,
   VisuallyHidden,
 } from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
@@ -77,26 +78,47 @@ const ContactForm = ({ stringList }: ProductData) => {
           <Input id="email" type="email" name="email" />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel fontSize="sm">Select String</FormLabel>
-          <Select id="string" name="string" placeholder="Select">
-            {stringList &&
-              stringList.map(
-                (s) =>
-                  s.inStock && (
-                    <option key={s.sku}>{s.brand + spacing + s.sku}</option>
-                  )
-              )}
-            <option>Free String Consultation</option>
-            <option>Hybrid - Put Strings in Notes</option>
-            <option>Bring Your Own - Labour $15</option>
-          </Select>
-          <ValidationError
-            prefix="String"
-            field="string"
-            errors={state.errors}
-          />
-        </FormControl>
+        <SimpleGrid columns={[1, 2]} spacing={4} w="100%">
+          {" "}
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Main String</FormLabel>
+            <Select id="string" name="string" placeholder="Select">
+              {stringList &&
+                stringList.map(
+                  (s) =>
+                    s.inStock && (
+                      <option key={s.sku}>{s.brand + spacing + s.sku}</option>
+                    )
+                )}
+              <option>Free String Consultation</option>
+              <option>Bring Your Own</option>
+            </Select>
+            <ValidationError
+              prefix="String"
+              field="string"
+              errors={state.errors}
+            />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Cross String</FormLabel>
+            <Select id="string" name="string" placeholder="Select">
+              {stringList &&
+                stringList.map(
+                  (s) =>
+                    s.inStock && (
+                      <option key={s.sku}>{s.brand + spacing + s.sku}</option>
+                    )
+                )}
+              <option>Free String Consultation</option>
+              <option>Bring Your Own</option>
+            </Select>
+            <ValidationError
+              prefix="String"
+              field="string"
+              errors={state.errors}
+            />
+          </FormControl>
+        </SimpleGrid>
         <HStack w="100%" spacing={4}>
           <FormControl isRequired>
             <FormLabel fontSize="sm">Main Tension (lbs)</FormLabel>
