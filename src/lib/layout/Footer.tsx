@@ -8,6 +8,7 @@ const Footer = () => {
       align="center"
       alignSelf="flex-end"
       justifyContent="center"
+      py={2}
     >
       <Text fontSize="xs">{new Date().getFullYear()} - String Meister</Text>
     </Flex>

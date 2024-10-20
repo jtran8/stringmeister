@@ -4,7 +4,7 @@ import { config } from "./config";
 
 export const theme = extendTheme({
   fonts: {
-    heading: "Plus Jakarta Sans, sans-serif",
+    heading: "Fraunces Variable, serif",
     body: "Plus Jakarta Sans, sans-serif",
   },
   components: {

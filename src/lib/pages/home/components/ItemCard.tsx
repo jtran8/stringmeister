@@ -4,7 +4,6 @@ import {
   Avatar,
   CardBody,
   Image,
-  Heading,
   Text,
   Collapse,
   Flex,
@@ -37,11 +36,13 @@ const ItemCard = ({
           <Flex w="100%" gap={4} alignItems="center">
             <Avatar name={brand} src={logo} />
             <Box>
-              <Heading size="sm">{brand}</Heading>
+              <Text fontWeight={700}>{brand}</Text>
               <Text>{sku}</Text>
             </Box>
             <Spacer />
-            <Heading size="lg">${price}</Heading>
+            <Text fontSize="3xl" fontWeight={700}>
+              ${price}
+            </Text>
           </Flex>
           <Show above="sm">
             {pic && (

@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 
 // fonts
 import "@fontsource/plus-jakarta-sans/latin.css";
+import "@fontsource-variable/fraunces/soft.css";
 
 import { theme } from "lib/styles/theme";
 

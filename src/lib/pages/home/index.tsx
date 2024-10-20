@@ -1,12 +1,13 @@
-import { Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 
-import ContactCard from "./components/ContactCard";
+import ContactForm from "./components/ContactForm";
 import ContentTabs from "./components/ContentTabs";
-import LaborCard from "./components/LaborCard";
+import Labour from "./components/Labour";
+import Landing from "./components/Landing";
 import LoadingCard from "./components/LoadingCard";
-import MapCard from "./components/MapCard";
+import Location from "./components/Location";
 import type ProductData from "./components/ProductData";
 
 const supabase = createClient(
@@ -17,7 +18,6 @@ const supabase = createClient(
 const Home = () => {
   const [stringList, setStrings] = useState<ProductData[] | null>([]);
   const [customList, setCustom] = useState<ProductData[] | null>([]);
-  const [gripList, setGrips] = useState<ProductData[] | null>([]);
   const [otherList, setOther] = useState<ProductData[] | null>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -39,14 +39,6 @@ const Home = () => {
     setCustom(data.data);
   };
 
-  const fetchGrips = async () => {
-    const data = await supabase
-      .from("grips")
-      .select("*")
-      .order("price", { ascending: false });
-    setGrips(data.data);
-  };
-
   const fetchOther = async () => {
     const data = await supabase
       .from("other")
@@ -58,33 +50,33 @@ const Home = () => {
   useEffect(() => {
     fetchStrings();
     fetchCustom();
-    fetchGrips();
     fetchOther();
     setIsLoading(false);
   }, []);
 
   return (
     <VStack gap={4}>
-      <VStack gap={2}>
-        <Heading fontSize="xl" fontWeight="normal">
-          West Toronto Stringing Services
-        </Heading>
-        <LaborCard />
+      <Landing />
+      <Box w="80%" id="strings">
+        <Labour />
+      </Box>
+      <VStack id="shop" gap={4}>
+        {isLoading ? (
+          <LoadingCard />
+        ) : (
+          <ContentTabs
+            stringList={stringList}
+            customList={customList}
+            otherList={otherList}
+          />
+        )}
       </VStack>
-      {isLoading ? (
-        <LoadingCard />
-      ) : (
-        <ContentTabs
-          stringList={stringList}
-          customList={customList}
-          gripList={gripList}
-          otherList={otherList}
-        />
-      )}
-      <SimpleGrid columns={[1, 2]} spacing={4} minW="100%">
-        <MapCard />
-        <ContactCard stringList={stringList} />
-      </SimpleGrid>
+      <Box w="100%" id="contact">
+        <Location />
+      </Box>
+      <Box w={["80%", null, null, "50%"]}>
+        <ContactForm />
+      </Box>
     </VStack>
   );
 };

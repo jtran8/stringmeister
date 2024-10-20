@@ -9,6 +9,7 @@ import {
   Image,
   Select,
   VStack,
+  Heading,
   HStack,
   Button,
   Textarea,
@@ -56,7 +57,10 @@ const ContactForm = ({ stringList }: ProductData) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <VStack spacing={4}>
+      <VStack spacing={4} py={[4, 8]}>
+        <Heading fontSize={["4xl", "6xl"]} mb={4} color="#0b533b">
+          BOOK NOW!
+        </Heading>
         <VisuallyHidden>
           <FormControl>
             <FormLabel fontSize="sm">Order Id</FormLabel>

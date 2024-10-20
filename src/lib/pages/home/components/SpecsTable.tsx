@@ -14,7 +14,9 @@ const SpecsTable = ({ specs, stats, sku }: Props) => (
       <Tbody>
         {Object.keys(specs).map((spec: string) => (
           <Tr key={sku + spec}>
-            <Th pt={2}>{spec}</Th>
+            <Th fontFamily="Plus Jakarta Sans" pt={2}>
+              {spec}
+            </Th>
             <Td>{specs[spec]}</Td>
           </Tr>
         ))}

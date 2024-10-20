@@ -1,24 +1,86 @@
-import { VStack, Image, useColorModeValue } from "@chakra-ui/react";
-
-import logoDark from "../../assets/img/logo_darkmode.svg";
-import logoLight from "../../assets/img/logo_lightmode.svg";
-import racquetsDark from "../../assets/img/racquets_darkmode.svg";
-import racquetsLight from "../../assets/img/racquets_lightmode.svg";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Heading,
+  HStack,
+  VStack,
+  IconButton,
+  Link,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { useState } from "react";
 
 const Header = () => {
-  const logo = useColorModeValue(logoLight, logoDark);
-  const racquets = useColorModeValue(racquetsLight, racquetsDark);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => setIsDrawerOpen(true);
+  const closeDrawer = () => setIsDrawerOpen(false);
+
   return (
-    <VStack
-      spacing={4}
-      width="full"
-      align="center"
-      alignSelf="flex-start"
-      justifyContent="center"
-    >
-      <Image src={logo} w={["100%", "75%", null, "50%"]} />
-      <Image src={racquets} w={["35%", "25%", null, "15%"]} />
-    </VStack>
+    <Box h="100%" w="100%" bgColor="#0b533b">
+      <HStack mx={[4, null, null, 20]} my={4} justify="space-between">
+        <Heading color="#fff4de" fontStyle="italic">
+          StringMeister
+        </Heading>
+        <IconButton
+          icon={<HamburgerIcon />}
+          color="white"
+          bgColor="#0b533b"
+          onClick={openDrawer}
+          display={{ base: "block", md: "none" }}
+          aria-label="drawer"
+        />
+        <HStack
+          spacing={8}
+          display={{ base: "none", md: "flex" }}
+          fontWeight={600}
+        >
+          <Link href="#strings" color="#fff4de">
+            Strings
+          </Link>
+          <Link href="#shop" color="#fff4de">
+            Services
+          </Link>
+          <Link href="#shop" color="#fff4de">
+            Goods
+          </Link>
+          <Link href="#contact" color="#fff4de">
+            Contact
+          </Link>
+        </HStack>
+      </HStack>
+
+      <Drawer isOpen={isDrawerOpen} placement="right" onClose={closeDrawer}>
+        <DrawerOverlay>
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader />
+            <DrawerBody>
+              <VStack spacing={8}>
+                <Link href="#strings" onClick={closeDrawer}>
+                  Strings
+                </Link>
+                <Link href="#shop" onClick={closeDrawer}>
+                  Services
+                </Link>
+                <Link href="#shop" onClick={closeDrawer}>
+                  Goods
+                </Link>
+                <Link href="#contact" onClick={closeDrawer}>
+                  Contact
+                </Link>
+              </VStack>
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
+    </Box>
   );
 };
+
 export default Header;

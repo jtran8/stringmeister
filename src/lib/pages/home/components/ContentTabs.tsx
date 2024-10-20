@@ -1,5 +1,6 @@
 import {
   Center,
+  Heading,
   Hide,
   Tab,
   TabList,
@@ -12,19 +13,25 @@ import {
 import ItemList from "./ItemList";
 import type ProductData from "./ProductData";
 
-const ContentTabs = ({
-  stringList,
-  customList,
-  gripList,
-  otherList,
-}: ProductData) => {
+const ContentTabs = ({ stringList, customList, otherList }: ProductData) => {
   return (
-    <Tabs isFitted variant="soft-rounded" colorScheme="green" h="100%" w="100%">
+    <Tabs isFitted variant="solid-rounded" h="100%" w="100%">
       <TabList>
-        <Tab>Strings</Tab>
-        <Tab>Services</Tab>
-        <Tab>Grips</Tab>
-        <Tab>Balls & Other</Tab>
+        <Tab _selected={{ bg: "#0b533b", color: "white" }}>
+          <Heading fontStyle="italic" fontWeight={600} fontSize="xl">
+            STRINGS
+          </Heading>
+        </Tab>
+        <Tab _selected={{ bg: "#0b533b", color: "white" }}>
+          <Heading fontStyle="italic" fontWeight={600} fontSize="xl">
+            SERVICES
+          </Heading>
+        </Tab>
+        <Tab _selected={{ bg: "#0b533b", color: "white" }}>
+          <Heading fontStyle="italic" fontWeight={600} fontSize="xl">
+            GOODS
+          </Heading>
+        </Tab>
       </TabList>
       <TabPanels>
         <TabPanel px={0}>
@@ -42,17 +49,6 @@ const ContentTabs = ({
             </Hide>
           </Center>
           <ItemList itemList={customList} />
-        </TabPanel>
-        <TabPanel px={0}>
-          <Center mb={4}>
-            <Hide above="sm">
-              <Text fontSize="sm">Tap item for more details.</Text>
-            </Hide>
-          </Center>
-          <ItemList itemList={gripList} />
-          <Center mt={4}>
-            <Text fontSize="sm">Free overgrip installation.</Text>
-          </Center>
         </TabPanel>
         <TabPanel px={0}>
           <Center mb={4}>
