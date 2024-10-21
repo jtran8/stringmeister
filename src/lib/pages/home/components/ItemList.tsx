@@ -39,7 +39,7 @@ const ItemList = ({ itemList }: ProductData) => {
                   shape={s?.shape}
                   colour={s?.colour}
                   specs={s?.specs}
-                  stats={s?.stats}
+                  attributes={s?.attributes}
                 />
               )
           )

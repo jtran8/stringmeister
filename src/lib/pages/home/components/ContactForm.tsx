@@ -5,7 +5,6 @@ import {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-  Text,
   Image,
   Select,
   VStack,
@@ -28,8 +27,10 @@ const ContactForm = ({ stringList }: ProductData) => {
   const [state, handleSubmit] = useForm("xeqwgzjz");
   if (state.succeeded) {
     return (
-      <VStack>
-        <Text fontSize="lg">Thank you, we&apos;ll be in contact soon!</Text>
+      <VStack py={4} spacing={4}>
+        <Heading color="#0b533b">
+          Thank you, we&apos;ll be in contact soon!
+        </Heading>
         <Image src={goat} borderRadius="xl" />
       </VStack>
     );
@@ -74,9 +75,9 @@ const ContactForm = ({ stringList }: ProductData) => {
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </FormControl>
         <FormControl isRequired>
-          <FormLabel fontSize="sm">Email address</FormLabel>
-          <Input id="email" type="email" name="email" />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
+          <FormLabel fontSize="sm">Phone</FormLabel>
+          <Input id="phone" type="tel" name="phone" />
+          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
         </FormControl>
         <SimpleGrid columns={[1, 2]} spacing={4} w="100%">
           {" "}
@@ -156,7 +157,7 @@ const ContactForm = ({ stringList }: ProductData) => {
           <Textarea
             id="notes"
             name="notes"
-            placeholder="Phone #, hybrid stringing, other items you wish to purchase, etc."
+            placeholder="Email, goods you wish to purchase, customization requests, etc."
           />
         </FormControl>
         <Button

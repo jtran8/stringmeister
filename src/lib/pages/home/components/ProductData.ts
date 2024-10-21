@@ -9,12 +9,15 @@ export default interface ProductData {
   type?: string;
   shape?: string;
   colour?: string;
+  gauges?: string;
   inStock?: boolean;
   specs?: {
     [key: string]: string;
   };
-  stats?: {
-    [key: string]: number;
+  attributes?: {
+    color: string;
+    scheme: string;
+    gauges: [];
   };
   [key: string]: any;
 }
