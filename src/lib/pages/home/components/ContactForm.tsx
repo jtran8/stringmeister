@@ -157,7 +157,7 @@ const ContactForm = ({ stringList }: ProductData) => {
           <Textarea
             id="notes"
             name="notes"
-            placeholder="Email, goods you wish to purchase, customization requests, etc."
+            placeholder="Email, string colour and gauge, goods you wish to purchase, customization requests, etc."
           />
         </FormControl>
         <Button
