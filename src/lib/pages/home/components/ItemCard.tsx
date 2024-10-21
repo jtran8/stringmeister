@@ -59,7 +59,9 @@ const ItemCard = ({
                   </Badge>
                 )}
                 {attributes?.gauges &&
-                  attributes.gauges.map((g) => <Badge>{g}</Badge>)}
+                  attributes.gauges.map((g) => (
+                    <Badge variant="outline">{g}</Badge>
+                  ))}
               </Flex>
             </Box>
             <Spacer />

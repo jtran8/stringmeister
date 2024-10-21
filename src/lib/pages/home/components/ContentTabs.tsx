@@ -7,7 +7,6 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
 } from "@chakra-ui/react";
 
 import ItemList from "./ItemList";
@@ -37,7 +36,9 @@ const ContentTabs = ({ stringList, customList, otherList }: ProductData) => {
         <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
-              <Text fontSize="sm">Tap item for more details.</Text>
+              <Heading fontSize="md" fontWeight={300}>
+                Tap item for more details.
+              </Heading>
             </Hide>
           </Center>
           <ItemList itemList={stringList} />
@@ -45,7 +46,9 @@ const ContentTabs = ({ stringList, customList, otherList }: ProductData) => {
         <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
-              <Text fontSize="sm">Tap item for more details.</Text>
+              <Heading fontSize="md" fontWeight={300}>
+                Tap item for more details.
+              </Heading>
             </Hide>
           </Center>
           <ItemList itemList={customList} />
@@ -53,7 +56,9 @@ const ContentTabs = ({ stringList, customList, otherList }: ProductData) => {
         <TabPanel px={0}>
           <Center mb={4}>
             <Hide above="sm">
-              <Text fontSize="sm">Tap item for more details.</Text>
+              <Heading fontSize="md" fontWeight={300}>
+                Tap item for more details.
+              </Heading>
             </Hide>
           </Center>
           <ItemList itemList={otherList} />
