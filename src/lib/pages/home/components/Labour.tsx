@@ -21,7 +21,7 @@ const Labour = () => {
       </HStack>
       <HStack mx={[0, null, null, 28]} justifyContent="space-betwen">
         <Heading fontWeight={500} fontSize={["2xl", "4xl"]}>
-          Rush Order (1 hr)
+          Rush Order (1 hr)*
         </Heading>
         <Spacer />
         <Heading fontWeight={500} fontSize={["2xl", "4xl"]}>
@@ -31,6 +31,10 @@ const Labour = () => {
       <Spacer />
       <Heading textAlign="center" fontWeight={500} fontSize={["2xl", "4xl"]}>
         Next Day Turnaround
+      </Heading>
+      <Spacer />
+      <Heading textAlign="center" fontWeight={500} fontSize={["2xl", "4xl"]}>
+        *Contact to Confirm Avaliability
       </Heading>
       <Spacer />
       <Heading
