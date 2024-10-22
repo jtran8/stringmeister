@@ -34,7 +34,7 @@ const Labour = () => {
       </Heading>
       <Spacer />
       <Heading textAlign="center" fontWeight={500} fontSize={["2xl", "4xl"]}>
-        *Contact to Confirm Avaliability
+        *Subject to Avaliability
       </Heading>
       <Spacer />
       <Heading
