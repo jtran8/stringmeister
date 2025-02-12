@@ -14,11 +14,13 @@ const ItemList = ({ itemList }: ProductData) => {
   //   setSearchTerm(searchInput);
   // };
 
-  const filteredItems = itemList.filter(
-    (item) =>
-      item.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.sku.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredItems = itemList
+    .filter(
+      (item) =>
+        item.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.sku.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => b.price - a.price);
 
   return (
     <VStack w="100%" spacing={4}>
