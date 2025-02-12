@@ -1,6 +1,6 @@
 import { Card, CardBody, Image, Text } from "@chakra-ui/react";
 
-import sad from "../../../../assets/img/sad.webp";
+import sad from "../../assets/img/sad.webp";
 
 const NotFoundCard = () => {
   return (

@@ -14,6 +14,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
@@ -30,7 +31,9 @@ const Header = () => {
     <Box h="100%" w="100%" bgColor="#0b533b">
       <HStack mx={[6, null, null, 20]} my={4} justify="space-between">
         <Heading color="#fff4de" fontStyle="italic">
-          StringMeister
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+            StringMeister
+          </Link>
         </Heading>
         <IconButton
           icon={<HamburgerIcon boxSize={6} />}

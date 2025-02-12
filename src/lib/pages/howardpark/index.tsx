@@ -9,14 +9,13 @@ import LoadingCard from "../../components/LoadingCard";
 
 import Labour from "./components/Labour";
 import Landing from "./components/Landing";
-import Location from "./components/Location";
 
 const supabase = createClient(
   `${import.meta.env.VITE_PUBLIC_SUPABASE_URL}`,
   `${import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY}`
 );
 
-const Home = () => {
+const HowardPark = () => {
   const [stringList, setStrings] = useState<ProductData[] | null>([]);
   const [customList, setCustom] = useState<ProductData[] | null>([]);
   const [otherList, setOther] = useState<ProductData[] | null>([]);
@@ -72,9 +71,6 @@ const Home = () => {
           />
         )}
       </VStack>
-      <Box w="100%" id="contact">
-        <Location />
-      </Box>
       <Box w={["80%", null, null, "50%"]}>
         <Contact stringList={stringList} />
       </Box>
@@ -82,4 +78,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HowardPark;

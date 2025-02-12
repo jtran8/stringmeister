@@ -18,13 +18,16 @@ import {
   VisuallyHidden,
 } from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
+import { useLocation } from "react-router-dom";
 
-import goat from "../../../../assets/img/goat.webp";
+import goat from "../../assets/img/goat.webp";
 
-import type ProductData from "./ProductData";
+import type ProductData from "./interfaces/ProductData";
 
-const ContactForm = ({ stringList }: ProductData) => {
+const Contact = ({ stringList }: ProductData) => {
   const [state, handleSubmit] = useForm("xeqwgzjz");
+  const location = useLocation();
+
   if (state.succeeded) {
     return (
       <VStack py={4} spacing={4}>
@@ -54,7 +57,11 @@ const ContactForm = ({ stringList }: ProductData) => {
     return result;
   }
 
-  const orderId = makeId(6);
+  let orderId = makeId(6);
+  if (location.pathname.length > 1) {
+    orderId += location.pathname;
+  }
+
   const spacing = " - ";
 
   return (
@@ -69,28 +76,38 @@ const ContactForm = ({ stringList }: ProductData) => {
             <Input id="orderId" value={orderId} type="text" name="orderId" />
           </FormControl>
         </VisuallyHidden>
-        <FormControl isRequired>
-          <FormLabel fontSize="sm">Name</FormLabel>
-          <Input id="name" type="text" name="name" />
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel fontSize="sm">Phone</FormLabel>
-          <Input id="phone" type="tel" name="phone" />
-          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
-        </FormControl>
         <SimpleGrid columns={[1, 2]} spacing={4} w="100%">
-          {" "}
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Name</FormLabel>
+            <Input id="name" type="text" name="name" />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Phone</FormLabel>
+            <Input id="phone" type="tel" name="phone" />
+            <ValidationError
+              prefix="Phone"
+              field="phone"
+              errors={state.errors}
+            />
+          </FormControl>
+        </SimpleGrid>
+        <SimpleGrid columns={[1, 2]} spacing={4} w="100%">
           <FormControl isRequired>
             <FormLabel fontSize="sm">Main String</FormLabel>
             <Select id="string" name="string" placeholder="Select">
               {stringList &&
-                stringList.map(
-                  (s) =>
-                    s.inStock && (
-                      <option key={s.sku}>{s.brand + spacing + s.sku}</option>
-                    )
-                )}
+                stringList
+                  .sort((a, b) => a.brand.localeCompare(b.brand))
+                  .map(
+                    (s) =>
+                      s.inStock &&
+                      s.attributes.gauges.map((g) => (
+                        <option key={`${s.sku}${g}`}>
+                          {`${s.brand}${spacing}${s.sku} ${g}${spacing}${s.attributes.color}`}
+                        </option>
+                      ))
+                  )}
               <option>Free String Consultation</option>
               <option>Bring Your Own</option>
             </Select>
@@ -104,12 +121,17 @@ const ContactForm = ({ stringList }: ProductData) => {
             <FormLabel fontSize="sm">Cross String</FormLabel>
             <Select id="string" name="string" placeholder="Select">
               {stringList &&
-                stringList.map(
-                  (s) =>
-                    s.inStock && (
-                      <option key={s.sku}>{s.brand + spacing + s.sku}</option>
-                    )
-                )}
+                stringList
+                  .sort((a, b) => a.brand.localeCompare(b.brand))
+                  .map(
+                    (s) =>
+                      s.inStock &&
+                      s.attributes.gauges.map((g) => (
+                        <option key={`${s.sku}${g}`}>
+                          {`${s.brand}${spacing}${s.sku} ${g}${spacing}${s.attributes.color}`}
+                        </option>
+                      ))
+                  )}
               <option>Free String Consultation</option>
               <option>Bring Your Own</option>
             </Select>
@@ -157,7 +179,7 @@ const ContactForm = ({ stringList }: ProductData) => {
           <Textarea
             id="notes"
             name="notes"
-            placeholder="Email, string colour and gauge, goods you wish to purchase, customization requests, etc."
+            placeholder="Email, racquet, goods you wish to purchase, customization requests, etc."
           />
         </FormControl>
         <Button
@@ -173,4 +195,4 @@ const ContactForm = ({ stringList }: ProductData) => {
   );
 };
 
-export default ContactForm;
+export default Contact;

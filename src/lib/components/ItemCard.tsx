@@ -16,7 +16,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import type ProductData from "./ProductData";
+import type ProductData from "./interfaces/ProductData";
 import SpecsTable from "./SpecsTable";
 
 const ItemCard = ({

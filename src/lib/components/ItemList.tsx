@@ -1,10 +1,11 @@
 import { VStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 
+import type ProductData from "./interfaces/ProductData";
 import ItemCard from "./ItemCard";
 import NotFoundCard from "./NotFoundCard";
+
 // import SearchBar from "./SearchBar";
-import type ProductData from "./ProductData";
 
 const ItemList = ({ itemList }: ProductData) => {
   const [searchTerm] = useState("");

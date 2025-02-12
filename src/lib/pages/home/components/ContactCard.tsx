@@ -1,7 +1,7 @@
 import { Card, CardBody, Heading } from "@chakra-ui/react";
 
-import ContactForm from "./ContactForm";
-import type ProductData from "./ProductData";
+import ContactForm from "../../../components/Contact";
+import type ProductData from "../../../components/interfaces/ProductData";
 
 const ContactCard = ({ stringList }: ProductData) => {
   return (

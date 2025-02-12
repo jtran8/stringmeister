@@ -9,8 +9,8 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 
+import type ProductData from "./interfaces/ProductData";
 import ItemList from "./ItemList";
-import type ProductData from "./ProductData";
 
 const ContentTabs = ({ stringList, customList, otherList }: ProductData) => {
   return (
