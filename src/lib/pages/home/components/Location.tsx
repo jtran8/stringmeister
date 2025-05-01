@@ -36,7 +36,7 @@ const Location = () => {
         7 Days / Week
       </Heading>
       <Heading fontWeight={500} fontSize={["2xl", "4xl"]} color="#fff4de">
-        Cell: (647) 878 8619
+        Cell: (647) 855 3767
       </Heading>
     </Flex>
   );
