@@ -36,15 +36,6 @@ const Labour = () => {
       <Heading textAlign="center" fontWeight={500} fontSize={["2xl", "4xl"]}>
         *Subject to Availability
       </Heading>
-      <Spacer />
-      <Heading
-        textAlign="center"
-        fontWeight={500}
-        fontStyle="italic"
-        fontSize={["2xl", "4xl"]}
-      >
-        SPECIAL - $5 off your 1st Stringing
-      </Heading>
       <Image src={flourish} />
     </Flex>
   );
