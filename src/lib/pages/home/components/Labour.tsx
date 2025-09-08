@@ -21,6 +21,15 @@ const Labour = () => {
       </HStack>
       <HStack mx={[0, null, null, 28]} justifyContent="space-betwen">
         <Heading fontWeight={500} fontSize={["2xl", "4xl"]}>
+          Bring Your Own Strings
+        </Heading>
+        <Spacer />
+        <Heading fontWeight={500} fontSize={["2xl", "4xl"]}>
+          $5
+        </Heading>
+      </HStack>
+      <HStack mx={[0, null, null, 28]} justifyContent="space-betwen">
+        <Heading fontWeight={500} fontSize={["2xl", "4xl"]}>
           Rush Order (1 hr)*
         </Heading>
         <Spacer />
